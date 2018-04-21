@@ -1,3 +1,3 @@
 # Spring 
 
-Go mit Go# springts
+Go mit Go
