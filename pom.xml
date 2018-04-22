@@ -92,14 +92,22 @@
   </dependencies>
 
   <build>
-        <!-- plugin jadul
+  <!--      
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+		<version></version>
+		<executions>
+			<execution>
+				<goals>
+					<goal>repackage</goal>
+				</goals>
+			</execution>
+		</executions>
             </plugin>
-        </plugins>
-        -->
+        </plugins>        
+-->
     <finalName>goMIT</finalName>
       <pluginManagement>
       <plugins>
@@ -113,7 +121,8 @@
         </plugin>
       </plugins>
     </pluginManagement>
-  </build>
+
+  </build> 
   <!--
     <repositories>
         <repository>
