@@ -21,7 +21,7 @@
 					<div class="thumbnail">
 						<div class="caption">
 							<h3>What the Hell</h3>
-							<p>${proyek}</p>
+							<p>${product}</p>
 						</div>
 					</div>
 				</div>

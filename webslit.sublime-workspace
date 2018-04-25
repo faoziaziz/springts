@@ -1,0 +1,336 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Em",
+				"EmbeddedDatabaseType"
+			],
+			[
+				"EM",
+				"EmbeddedDatabaseBuilder"
+			],
+			[
+				"config",
+				"Configuration"
+			],
+			[
+				"em",
+				"embedded"
+			],
+			[
+				"Product",
+				"Product"
+			],
+			[
+				"Pr",
+				"Product"
+			],
+			[
+				"deskripsi",
+				"deskirpsi"
+			],
+			[
+				"clas",
+				"Class"
+			],
+			[
+				"me",
+				"meta\tTag"
+			],
+			[
+				"react",
+				"react-scripts"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "pom.xml",
+			"settings":
+			{
+				"buffer_size": 4432,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "package com.labseni.SAR;\nimport java.awt.Color;\nimport java.awt.BasicStroke;\nimport javax.swing.JFrame;\nimport org.jfree.chart.JFreeChart;\nimport org.jfree.chart.ChartUtils;\nimport org.jfree.chart.ChartFactory;\nimport org.jfree.chart.ChartPanel;\nimport org.jfree.data.xy.XYDataset;\nimport org.jfree.data.xy.XYSeries;\nimport org.jfree.chart.plot.XYPlot;\nimport org.jfree.chart.ui.ApplicationFrame;\nimport org.jfree.data.general.DefaultPieDataset;\nimport org.jfree.chart.plot.PlotOrientation;\nimport org.jfree.data.xy.XYSeriesCollection;\nimport org.jfree.chart.ui.UIUtils; //perubahan dari refinerry utilities\nimport java.io.File;\nimport org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;\nimport java.lang.Math; //Ini library untuk Perhitungan Matematika \nimport java.util.Random; //Ini library untuk perhitungan Random\npublic class SimCantik {\n\tpublic SimCantik()\n\t{\n\t\t\n\t\n\t}\n\tprivate class \n\n\tprivate class ngeplotFrame extends ApplicationFrame\n\t{\n\t\tpublic ngeplotFrame(String JudulFrame, String JudulPlot)\n\t\t{\n\t\t\tsuper(JudulFrame);\n\t\t\tJFreeChart ChartGarisXY = ChartFactory.createXYLineChart(JudulPlot, \"Category\", \"Score\", createDataset(), PlotOrientation.VERTICAL, true, true, false);\n\t\t\tChartPanel plotPanel = new ChartPanel(ChartGarisXY);\n\t\t\tplotPanel.setPreferredSize(new java.awt.Dimension(560, 367));\n\t\t\tfinal XYPlot plot = ChartGarisXY.getXYPlot();\n\t\t\tXYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();\n\t\t\trenderer.setSeriesPaint(0, Color.RED);\n\t\t\trenderer.setSeriesPaint(1, Color.GREEN);\n\t\t\trenderer.setSeriesPaint(2, Color.YELLOW);\n\t\t\trenderer.setSeriesStroke(0, new BasicStroke(4.0f));\n\t\t\trenderer.setSeriesStroke(1, new BasicStroke(3.0f));\n\t\t\trenderer.setSeriesStroke(2, new BasicStroke(2.0f));\n\t\t\tplot.setRenderer(renderer);\n\t\t\tsetContentPane(plotPanel);\n\t\t\t\n\t\t}\n\t\tprivate XYDataset createDataset()\n\t\t{\n\t\t\tfinal XYSeries firefox = new XYSeries(\"Firefox\");\n\t\t\tfirefox.add(1.0, 1.0);\n\t\t\tfirefox.add(2.0, 4.0);\n\t\t\tfirefox.add(3.0, 3.0);\n\t\t\tfinal XYSeries chrome = new XYSeries(\"Chrome\");\n\t\t\tchrome.add(1.0, 4.0);\n\t\t\tchrome.add(2.0, 5.0);\n\t\t\tchrome.add(3.0, 6.0);\n\t\t\tfinal XYSeries iexplorer = new XYSeries(\"Internet Explorer\");\n\t\t\tiexplorer.add(1.0, 1.0);\n\t\t\tiexplorer.add(2.0, 4.0);\n\t\t\tiexplorer.add(3.0, 3.0);\n\t\t\tfinal XYSeriesCollection dataset = new XYSeriesCollection();\n\t\t\tdataset.addSeries(firefox);\n\t\t\tdataset.addSeries(chrome);\n\t\t\tdataset.addSeries(iexplorer);\n\t\t\treturn dataset;\n\n\t\t}\n\n\t}\n\n\n\tprivate class bikinGambar \n\t{\n\t\t\n\t\tpublic void bikinGambar()\n\t\t{\n\t\t\tDefaultPieDataset pieDataset = new DefaultPieDataset();\n\t\t\tpieDataset.setValue(\"A\", new Integer(75));\n\t\t\tpieDataset.setValue(\"B\", new Integer(10));\n\t\t\tpieDataset.setValue(\"C\", new Integer(10));\n\t\t\tpieDataset.setValue(\"D\", new Integer(5));\n\t\n\t\t\tJFreeChart chart = ChartFactory.createPieChart(\"Nyoba sih\", pieDataset, true, true, false);\n\t\t\ttry {\n\t\t\t\tChartUtils.saveChartAsJPEG(new File(\"chasrt.jpg\"), chart, 500, 300);\n\t\t\t} \n\t\t\tcatch (Exception e) \n\t\t\t{\n\t\t\t\tSystem.out.println(\"Problem occurred creating chart.\"); \n\t\t\t}\n\t\t}\n\t}\n\n\tpublic void Jalankan()\n\t{\n\t\t//test perhitungan\n\t\tint abs1= Math.abs(-10);\n\t\tRandom rand=new Random();\n\t\tint n = rand.nextInt(50)+1;\n\n\t\tSystem.out.println(\"Absolute -10 adalah \" + abs1);\n\t\tSystem.out.println(\"Random yang kurang dari 50 \"+ n);\n\n\t\t\n\t\tbikinGambar makan= new bikinGambar();\n\t\tmakan.bikinGambar();\n\t\tngeplotFrame chart = new ngeplotFrame(\"Boker\", \"Dicelana\");\n\t\tchart.pack();\n\t\tUIUtils.centerFrameOnScreen(chart);\n\t\tchart.setVisible(true);\n\t\t\n\n\t}\n\n}\n",
+			"file": "/home/afaozi/ngoprek/saryum/UserInterface/src/main/java/com/labseni/SAR/SimCantik.java",
+			"file_size": 3464,
+			"file_write_time": 131689529933619317,
+			"settings":
+			{
+				"buffer_size": 3482,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/afaozi/ngoprek/saryum",
+		"/home/afaozi/ngoprek/saryum/UserInterface",
+		"/home/afaozi/ngoprek/saryum/UserInterface/src",
+		"/home/afaozi/ngoprek/saryum/UserInterface/src/main",
+		"/home/afaozi/ngoprek/saryum/UserInterface/src/main/java",
+		"/home/afaozi/ngoprek/saryum/UserInterface/src/main/java/com",
+		"/home/afaozi/ngoprek/saryum/UserInterface/src/main/java/com/labseni",
+		"/home/afaozi/ngoprek/saryum/UserInterface/src/main/java/com/labseni/SAR"
+	],
+	"file_history":
+	[
+		"/home/afaozi/ngoprek/saryum/UserInterface/src/main/java/com/labseni/SAR/SplashDemo.java",
+		"/home/afaozi/ngoprek/saryum/UserInterface/src/main/java/com/labseni/SAR/App.java",
+		"/home/afaozi/ngoprek/springts/src/main/resources/db/sql/create-table.sql",
+		"/home/afaozi/ngoprek/springts/pom.xml",
+		"/home/afaozi/ngoprek/springts/src/main/resources/db/sql/insert-data.sql",
+		"/home/afaozi/ngoprek/springts/src/main/java/com/labseni/app/RootApplicationContextConfig.java",
+		"/home/afaozi/ngoprek/springts/src/main/java/com/labseni/app/HomeController.java",
+		"/home/afaozi/ngoprek/springts/src/main/webapp/WEB-INF/views/proyeks.jsp",
+		"/home/afaozi/ngoprek/springts/src/main/webapp/WEB-INF/jsp/welcome.jsp",
+		"/home/afaozi/ngoprek/springts/run.sh",
+		"/home/afaozi/ngoprek/spring4-restful-example/run",
+		"/home/afaozi/ngoprek/springts/src/main/java/com/labseni/app/WebApplicationContextConfig.java",
+		"/home/afaozi/ngoprek/springts/src/main/java/com/labseni/app/DispatcherServletInitializer.java",
+		"/home/afaozi/ngoprek/spring4-restful-example/pom.xml",
+		"/home/afaozi/ngoprek/spring-boot-demo/src/main/java/com/heroku/demo/Application.java",
+		"/home/afaozi/ngoprek/spring4-restful-example/src/main/java/net/viralpatel/spring/config/AppConfig.java",
+		"/home/afaozi/ngoprek/spring-boot-demo/pom.xml",
+		"/home/afaozi/ngoprek/springts/src/main/java/com/labseni/app/App.java",
+		"/home/afaozi/ngoprek/spring-boot-demo/src/main/java/com/heroku/demo/DatabaseConfig.java",
+		"/home/afaozi/ngoprek/gs-maven/initial/src/main/java/hello/Greeter.java",
+		"/home/afaozi/ngoprek/labseni/src/Latihan.js",
+		"/home/afaozi/ngoprek/labseni/public/manifest.json",
+		"/home/afaozi/ngoprek/labseni/src/rasomon.js",
+		"/home/afaozi/ngoprek/labseni/public/rasomon.html",
+		"/home/afaozi/ngoprek/labseni/public/index.html",
+		"/home/afaozi/ngoprek/labseni/public/latihan.html",
+		"/home/afaozi/ngoprek/labseni/src/Mulai.css",
+		"/home/afaozi/ngoprek/labseni/src/Mulai.js",
+		"/home/afaozi/ngoprek/labseni/src/index.js",
+		"/home/afaozi/ngoprek/labseni/src/App.css",
+		"/home/afaozi/ngoprek/labseni/package.json",
+		"/home/afaozi/ngoprek/labseni/README.md",
+		"/home/afaozi/ngoprek/labseni/src/App.test.js",
+		"/home/afaozi/ngoprek/labseni/src/components/footer.jsx",
+		"/home/afaozi/ngoprek/labseni/src/layout.jsx",
+		"/home/afaozi/ngoprek/labseni/src/routes.jsx",
+		"/home/afaozi/ngoprek/labseni/src/components/menu.jsx",
+		"/home/afaozi/ngoprek/labseni/src/ranma.c",
+		"/home/afaozi/ngoprek/labseni/src/Mangekyo.js"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"productId",
+			"proyekId"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "pom.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4432,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3983,
+								3998
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1573.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/afaozi/ngoprek/saryum/UserInterface/src/main/java/com/labseni/SAR/SimCantik.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3482,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								980,
+								980
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "webslit.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 255.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

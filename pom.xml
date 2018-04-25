@@ -27,6 +27,21 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
       <version>${springframework.version}</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${springframework.version}</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hsqldb</groupId>
+      <artifactId>hsqldb</artifactId>
+      <version>2.3.2</version>
+      <scope>compile</scope>
     </dependency>
 
     <dependency>
@@ -61,6 +76,13 @@
 
     <dependency>
       <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${springframework.version}</version>
+      <scope>compile</scope>
+    </dependency>    
+
+    <dependency>
+      <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
       <version>${springframework.version}</version>
     </dependency>
@@ -69,6 +91,7 @@
         <groupId>jstl</groupId>
         <artifactId>jstl</artifactId>
         <version>1.2</version>
+        <scope>compile</scope>
     </dependency>
 
     <dependency>
@@ -112,14 +135,32 @@
       <pluginManagement>
       <plugins>
         <plugin>
+          <!--
           <groupId>org.apache.tomcat.maven</groupId>
           <artifactId>tomcat7-maven-plugin</artifactId>
-	  <version>2.2</version>
+	        <version>2.2</version>
+          --><!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-maven-plugin -->
+
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>1.5.12.RELEASE</version>
+
           <configuration>
             <path>/goMIT</path>
           </configuration>
         </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugin</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>2.6</version>
+          <configuration>
+            <failOnMissingWebXml>false</failOnMissingWebXml>
+          </configuration>
+
+        </plugin>
       </plugins>
+
     </pluginManagement>
 
   </build> 
@@ -139,3 +180,4 @@
     </pluginRepositories>
   -->
 </project>
+

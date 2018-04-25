@@ -1,45 +1,48 @@
 package com.labseni.app.domain;
 
+/*
+	filename : Product.java
+*/
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Proyek implements Serializable{
+public class Product implements Serializable{
 	private static final long serialVersionUID = 3678107792576131001L;
-	private String proyekId;
-	public String name;
+	private String productId;
+	private String name;
 	private BigDecimal unitPrice;
-	private String deskripsi;
-	private String manufaktur;
-	private String kategori;
+	private String description;
+	private String manufacturer;
+	private String category;
 	private long unitsInStock;
 	private long unitsInOrder;
 	private boolean discontinued;
 	private String condition;
 	
-	public Proyek(){
+	public Product() {
 		super();
-		String name ="Astaga";
 	}
 	
-	public Proyek(String proyekId, String name, BigDecimal unitPrice)
+	public Product(String productId, String name, BigDecimal unitPrice)
 	{
-		this.proyekId=proyekId;
+		this.productId=productId;
 		this.name=name;
 		this.unitPrice=unitPrice;
 	}
-	public void setDeskripsi(String deskripsi)
+	public void setDescription(String description)
 	{
-		this.deskripsi=deskripsi;
+		this.description=description;
 		//return this;
 	}
-	public void setKategori(String kategori)
+	public void setCategory(String category)
 	{
-		this.kategori=kategori;
+		this.category=category;
 		//return this;
 	}
 	public void setManufaktur(String manufaktur)
 	{
-		this.manufaktur=manufaktur;
+		this.manufacturer=manufacturer;
 		//return this;
 	}
 
@@ -57,14 +60,14 @@ public class Proyek implements Serializable{
 			return false;
 		}
 
-		Proyek lainnya = (Proyek) obj;
-		if (proyekId==null){
-			if (lainnya.proyekId!=null)
+		Product other = (Product) obj;
+		if (productId==null){
+			if (other.productId!=null)
 			{
 				return false;
 			}
 		}
-		else if(!proyekId.equals(lainnya.proyekId))
+		else if(!productId.equals(other.productId))
 		{
 			return false;
 		}
@@ -76,7 +79,7 @@ public class Proyek implements Serializable{
 	{
 		final int prime = 31;
 		int result=1;
-		result=prime*result +((proyekId==null)?0:proyekId.hashCode());
+		result=prime*result +((productId==null)?0:productId.hashCode());
 		return result;
 	}
 }
